@@ -10,7 +10,12 @@
 </head>
 
 <body>
-<!--def1-->
+<script data-defer-ignore>
+    for (i = 0; i < cars.length; i++) {
+        text += cars[i] + "<br>";
+    }
+</script>
+<!--def2-->
 <table border="1">
     <thead>
     <tr>
@@ -36,11 +41,12 @@
         <td>johnrambo@mail.com</td>
     </tr>
     </tbody>
-    <!--def2-->
     <!--def3-->
-<!--def0--><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><!--def1--><script data-template="uploader" type="text/x-magento-template">
+    <!--def4-->
+</table>
+<!--def0--><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><!--def2--><script data-template="uploader" type="text/x-magento-template">
     <div id="<%- data.id %>" class="file-row">
-        <span class="file-info"><Test 1</span>
+        <span class="file-info">Test 1</span>
         <div class="progressbar-container">
             <div class="progressbar upload-progress" style="width: 0%;"></div>
         </div>
@@ -49,9 +55,9 @@
             <span></span><span></span><span></span><span></span>
         </div>
     </div>
-</script><!--def2--><script>
+</script><!--def3--><script>
         for (i = 0; i < cars.length; i++) {
             text += cars[i] + "<br>";
         }
-    </script><!--def3--><script src="js/scripts.js"></script></body>
+    </script><!--def4--><script src="js/scripts.js"></script></body>
 </html>
