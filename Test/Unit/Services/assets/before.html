@@ -10,9 +10,14 @@
 </head>
 
 <body>
+<script data-defer-ignore>
+    for (i = 0; i < cars.length; i++) {
+        text += cars[i] + "<br>";
+    }
+</script>
 <script data-template="uploader" type="text/x-magento-template">
     <div id="<%- data.id %>" class="file-row">
-        <span class="file-info"><Test 1</span>
+        <span class="file-info">Test 1</span>
         <div class="progressbar-container">
             <div class="progressbar upload-progress" style="width: 0%;"></div>
         </div>
@@ -53,5 +58,6 @@
         }
     </script>
     <script src="js/scripts.js"></script>
+</table>
 </body>
 </html>

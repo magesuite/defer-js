@@ -9,6 +9,8 @@ class ScriptDefer
      */
     private $backtrackLimit;
 
+    private $defaultIgnoredSubstrings = ['defer-ignore'];
+
     public function __construct($backtrackLimit = 1000000)
     {
         $this->backtrackLimit = $backtrackLimit;
@@ -23,7 +25,6 @@ class ScriptDefer
         if(strpos($html,'</body>') === false) {
             return $html;
         }
-
         $scriptsPattern = '@<script(.*)<\/script>@msU';
         $pcreBacktrackLimit = ini_get('pcre.backtrack_limit');
         $pcreRecursionLimit = ini_get('pcre.recursion_limit');
@@ -33,6 +34,7 @@ class ScriptDefer
 
         if (preg_match_all($scriptsPattern, $html, $matches) !== false) {
             $deferredScripts = '';
+            $ignoredScriptsSubstrings = array_merge($this->defaultIgnoredSubstrings, $ignoredScriptsSubstrings);
             $skipRegexp = join('|', $ignoredScriptsSubstrings);
             
             foreach($matches[0] as $key => $scriptTag) {
