@@ -1,26 +1,27 @@
 <?php
 
-namespace MageSuite\DeferJs\Test\Unit\Services;
+namespace MageSuite\DeferJs\Test\Unit\Service;
 
 class ScriptDeferTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @var \MageSuite\DeferJs\Services\ScriptDefer
+     * @var \MageSuite\DeferJs\Service\ScriptDefer
      */
     protected $scriptDefer;
 
     public function setUp()
     {
-        $this->scriptDefer = new \MageSuite\DeferJs\Services\ScriptDefer(10000);
+        $this->scriptDefer = new \MageSuite\DeferJs\Service\ScriptDefer();
     }
 
     public function testItDoesNotAlterHTMLWhenThereAreNoScriptTags()
     {
         $beforeDeferHTML = file_get_contents(__DIR__ . '/assets/before_without_script.html', 'r');
+        $afterDeferHTML = file_get_contents(__DIR__ . '/assets/after_without_script.html', 'r');
 
         $html = $this->scriptDefer->execute($beforeDeferHTML);
 
-        $this->assertEquals($beforeDeferHTML, $html);
+        $this->assertEquals($afterDeferHTML, $html);
     }
 
     public function testItDefersJavascript()
@@ -30,16 +31,16 @@ class ScriptDeferTest extends \PHPUnit\Framework\TestCase
 
         $html = $this->scriptDefer->execute($beforeDeferHTML);
 
+
         $this->assertEquals($afterDeferHTML, $html);
     }
 
     public function testItDefersLongJavascriptStrings()
     {
-        $scriptDefer = new \MageSuite\DeferJs\Services\ScriptDefer();
         $beforeDeferHTML = file_get_contents(__DIR__ . '/assets/before_long.html', 'r');
         $afterDeferHTML = file_get_contents(__DIR__ . '/assets/after_long.html', 'r');
 
-        $html = $scriptDefer->execute($beforeDeferHTML);
+        $html = $this->scriptDefer->execute($beforeDeferHTML);
 
         $this->assertEquals($afterDeferHTML, $html);
     }

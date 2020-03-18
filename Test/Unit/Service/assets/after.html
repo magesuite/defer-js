@@ -6,7 +6,7 @@
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
     <link rel="stylesheet" href="css/styles.css?v=1.0">
-    <!--def0-->
+    
 </head>
 
 <body>
@@ -15,18 +15,7 @@
         text += cars[i] + "<br>";
     }
 </script>
-<script data-template="uploader" type="text/x-magento-template">
-    <div id="<%- data.id %>" class="file-row">
-        <span class="file-info">Test 1</span>
-        <div class="progressbar-container">
-            <div class="progressbar upload-progress" style="width: 0%;"></div>
-        </div>
-        <div class="spinner">
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
-        </div>
-    </div>
-</script>
+
 <table border="1">
     <thead>
     <tr>
@@ -52,12 +41,28 @@
         <td>johnrambo@mail.com</td>
     </tr>
     </tbody>
-    <!--def3-->
-    <!--def4-->
+    
+    
 </table>
-<!--def0--><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><!--def3--><script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<script data-template="uploader" type="text/x-magento-template">
+    <div id="<%- data.id %>" class="file-row">
+        <span class="file-info">Test 1</span>
+        <div class="progressbar-container">
+            <div class="progressbar upload-progress" style="width: 0%;"></div>
+        </div>
+        <div class="spinner">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+</script>
+<script>
         for (i = 0; i < cars.length; i++) {
             text += cars[i] + "<br>";
         }
-    </script><!--def4--><script src="js/scripts.js"></script></body>
+    </script>
+<script src="js/scripts.js"></script>
+</body>
 </html>

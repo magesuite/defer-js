@@ -1,9 +1,9 @@
 <?php
 
-namespace MageSuite\DeferJs\Model;
+namespace MageSuite\DeferJs\Observer;
 
 
-class Observer implements \Magento\Framework\Event\ObserverInterface
+class ScriptDefer implements \Magento\Framework\Event\ObserverInterface
 {
 
     /**
@@ -12,7 +12,7 @@ class Observer implements \Magento\Framework\Event\ObserverInterface
     protected $helper;
 
     /**
-     * @var \MageSuite\DeferJs\Services\ScriptDefer
+     * @var \MageSuite\DeferJs\Service\ScriptDefer
      */
     protected $scriptDefer;
 
@@ -21,7 +21,7 @@ class Observer implements \Magento\Framework\Event\ObserverInterface
     )
     {
         $this->helper = $helper;
-        $this->scriptDefer = new \MageSuite\DeferJs\Services\ScriptDefer();
+        $this->scriptDefer = new \MageSuite\DeferJs\Service\ScriptDefer();
     }
 
     public function execute(\Magento\Framework\Event\Observer $observer)
