@@ -9,7 +9,7 @@ class ScriptDeferTest extends \PHPUnit\Framework\TestCase
      */
     protected $scriptDefer;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->scriptDefer = new \MageSuite\DeferJs\Service\ScriptDefer();
     }
