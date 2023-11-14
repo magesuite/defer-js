@@ -9,7 +9,7 @@ class ScriptDefer
     /**
      * Moves script tags from given HTML to the end of the body.
      * Every script is additionally checked against ignored list configured in admin panel.
-     * 
+     *
      * @param string $html HTML with script tags all over the place.
      * @return string HTML with non-ignored script tags moved to the end of body.
      */
